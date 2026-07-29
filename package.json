@@ -1,0 +1,30 @@
+{
+  "name": "expedicija",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Expedicija - Nalog za otpremu (vizuelna replika)",
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "build:win": "electron-vite build && electron-builder --win"
+  },
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.1",
+    "@electron-toolkit/utils": "^4.0.0",
+    "@supabase/supabase-js": "^2.111.0",
+    "lucide-react": "^0.469.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.3.0",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^5.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "vite": "^6.0.7"
+  }
+}

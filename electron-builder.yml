@@ -1,0 +1,9 @@
+appId: ba.lukavaccement.expedicija
+productName: Expedicija
+directories:
+  output: release
+files:
+  - out/**/*
+win:
+  target: portable
+  artifactName: ${productName}-${version}.exe

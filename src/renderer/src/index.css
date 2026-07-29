@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  /* surfaces */
+  --color-win-face: #ece9d8;
+  --color-win-panel: #f4f2ea;
+  --color-win-white: #ffffff;
+  --color-win-sidebar: #fafaf7;
+
+  /* borders */
+  --color-win-border: #aca899;
+  --color-win-border-dark: #919b9c;
+  --color-win-input-border: #7f9db9;
+
+  /* text */
+  --color-win-text: #000000;
+  --color-win-text-dim: #4a4a4a;
+  --color-win-heading: #003399;
+  --color-win-red: #c00000;
+
+  /* accents */
+  --color-win-yellow: #ffffc8;
+  --color-win-select: #316ac5;
+
+  /* type */
+  --font-win: Tahoma, "Segoe UI", "MS Sans Serif", system-ui, sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-win);
+  font-size: 11px;
+  background: var(--color-win-face);
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-win-face);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-win-border);
+}
+
+@layer components {
+  .win-label {
+    @apply whitespace-nowrap text-[11px] text-win-text;
+  }
+
+  .win-input {
+    @apply h-[20px] w-full border border-win-input-border bg-win-white px-1 text-[11px] leading-[20px] text-win-text outline-none;
+  }
+
+  .win-input-yellow {
+    @apply h-[20px] w-full border border-win-input-border bg-win-yellow px-1 text-[11px] leading-[20px] text-win-text outline-none;
+  }
+
+  .win-btn {
+    @apply flex items-center gap-1 border border-win-border bg-win-panel px-2 py-0.5 text-[11px] text-win-text hover:bg-win-white;
+  }
+
+  .win-btn-browse {
+    @apply flex h-[20px] w-[20px] items-center justify-center border border-win-input-border bg-win-panel text-[11px] leading-none hover:bg-win-white;
+  }
+
+  .win-groupbox {
+    @apply relative border border-win-border-dark px-2 pb-2 pt-3;
+  }
+
+  .win-spinner {
+    @apply flex h-[20px] w-full items-stretch border border-win-input-border bg-win-white text-[11px] leading-[20px] text-win-text outline-none;
+  }
+}
