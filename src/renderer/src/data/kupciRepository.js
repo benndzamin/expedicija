@@ -17,8 +17,11 @@ export async function fetchKupciBezNajave() {
 
 export function mapKupacToNalog(nalog, kupac) {
   const artikli = kupac.dozvoljeni_artikli || [];
+  // Ako kupac ima više dozvoljenih vrsta, ostaviti polje prazno da operater
+  // eksplicitno izabere -- ako ima samo jednu, nema stvarnog izbora pa se
+  // ta jedna vrsta upisuje automatski.
   const stavke = nalog.stavke.map((stavka, i) =>
-    i === 0 ? { ...stavka, roba: artikli[0] || "" } : stavka,
+    i === 0 ? { ...stavka, roba: artikli.length > 1 ? "" : artikli[0] || "" } : stavka,
   );
 
   return {

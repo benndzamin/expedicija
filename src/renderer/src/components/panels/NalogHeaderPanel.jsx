@@ -6,7 +6,12 @@ import CheckBox from "../ui/CheckBox";
 import ToolButton from "../ui/ToolButton";
 import { ICONS } from "../../icons";
 
-export default function NalogHeaderPanel({ nalog, onOpenNajave, najaveEnabled }) {
+export default function NalogHeaderPanel({
+  nalog,
+  onOpenNajave,
+  najaveEnabled,
+  onFieldChange,
+}) {
   return (
     <GroupBox label="Broj i datum naloga otpreme" className="h-full">
       <div className="flex items-center justify-between gap-4">
@@ -15,7 +20,12 @@ export default function NalogHeaderPanel({ nalog, onOpenNajave, najaveEnabled })
             <TextInput variant="yellow" value={nalog.broj_naloga} className="w-32" />
           </FieldRow>
           <FieldRow label="Datum naloga:" labelWidth="w-24">
-            <ComboInput value={nalog.datum_naloga} className="w-32 flex-none" />
+            <ComboInput
+              value={nalog.datum_naloga}
+              readOnly={false}
+              onChange={(e) => onFieldChange("datum_naloga", e.target.value)}
+              className="w-32 flex-none"
+            />
             <CheckBox label="Proknjižen" checked={nalog.proknjizen} className="ml-3" />
           </FieldRow>
         </div>

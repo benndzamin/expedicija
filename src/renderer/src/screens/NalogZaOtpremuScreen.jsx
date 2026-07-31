@@ -28,6 +28,7 @@ export default function NalogZaOtpremuScreen({
           nalog={nalog}
           onOpenNajave={onOpenNajave}
           najaveEnabled={najaveEnabled}
+          onFieldChange={onFieldChange}
         />
       </div>
       <div className="col-span-4">

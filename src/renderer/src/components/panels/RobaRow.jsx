@@ -14,6 +14,7 @@ export default function RobaRow({ stavka, index, onRobaChange, allowedArtikli })
             onChange={(e) => onRobaChange(index, e.target.value)}
             className="win-input w-full"
           >
+            <option value="">-- izaberite vrstu --</option>
             {allowedArtikli.map((artikal) => (
               <option key={artikal} value={artikal}>
                 {artikal}

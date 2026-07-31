@@ -24,6 +24,7 @@ const REQUIRED_FIELD_LABELS = {
 function loadNalogSaDanasnjimDatumom() {
   return getNalog().then((data) => ({
     ...data,
+    datum_naloga: formatDatumDanas(),
     isporuka_na_osnovu: formatDatumDanas(),
   }));
 }
