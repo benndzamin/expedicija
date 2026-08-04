@@ -32,6 +32,19 @@ export async function izdajNalogZaNajavu(najava, currentUserId) {
       new_status: "in_progress",
     });
   if (historyError) throw historyError;
+
+  supabase.functions
+    .invoke("send-status-push-notification", {
+      body: {
+        userId: najava.created_by,
+        vrstaCementa: najava.vrsta_cementa,
+        oldStatus: "pending",
+        newStatus: "in_progress",
+      },
+    })
+    .catch((err) =>
+      console.error("Slanje push notifikacije nije uspjelo:", err),
+    );
 }
 
 export function mapNajavaToNalog(nalog, najava) {
