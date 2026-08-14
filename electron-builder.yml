@@ -2,8 +2,12 @@ appId: ba.lukavaccement.expedicija
 productName: Expedicija
 directories:
   output: release
+  buildResources: build
 files:
   - out/**/*
+  - resources/**/*
+icon: build/icon.ico
 win:
   target: portable
+  icon: build/icon.ico
   artifactName: ${productName}-${version}.exe

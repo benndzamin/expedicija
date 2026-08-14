@@ -2,6 +2,8 @@ const { app, BrowserWindow, Menu } = require("electron");
 const { join } = require("node:path");
 const { is } = require("@electron-toolkit/utils");
 
+const icon = join(__dirname, "../../resources/icon.png");
+
 Menu.setApplicationMenu(null);
 
 function createWindow() {
@@ -13,6 +15,7 @@ function createWindow() {
     show: false,
     autoHideMenuBar: true,
     backgroundColor: "#ECE9D8",
+    icon,
     webPreferences: {
       preload: join(__dirname, "../preload/index.js"),
       sandbox: false,
