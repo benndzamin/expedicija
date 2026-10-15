@@ -50,9 +50,13 @@ export default function App() {
     authStatus === "ready",
   );
 
+  // selectedKupac je snimak u trenutku izbora -- uzeti svježu verziju iz liste
+  // da se izmjene dozvoljenih artikala odmah vide.
+  const currentKupac =
+    selectedKupac && (kupci.find((k) => k.id === selectedKupac.id) ?? selectedKupac);
   const allowedArtikli =
-    selectedKupac?.dozvoljeni_artikli?.length > 1
-      ? selectedKupac.dozvoljeni_artikli
+    currentKupac?.dozvoljeni_artikli?.length > 1
+      ? currentKupac.dozvoljeni_artikli
       : null;
 
   const showToast = (type, message) => {
